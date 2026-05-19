@@ -1,0 +1,4067 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "alder",
+    "expression": "grel:value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column alder using expression grel:value.toNumber()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "deres søn, Væver",
+          "deres Søn, Væver",
+          "Væver deres Søn",
+          "Væver, deres søn",
+          "[deres søn], Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "deres søn og Væver",
+          "deres Søn og Væver",
+          "Deres Søn og Væver",
+          "deres Søn og væver",
+          "deres søn og væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "deres søn",
+          "deres Søn",
+          "Deres Søn",
+          "[deres søn]",
+          "Deres søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "deres søn"
+      },
+      {
+        "from": [
+          "Huusmand, lever af sin Jordlod",
+          "lever af sin Jordlod, Huusmand",
+          "Huusmand lever af sin Jordlod",
+          "Huusmand, lever af sin jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusmand, lever af sin Jordlod"
+      },
+      {
+        "from": [
+          "Huusmand, lever af en Jordlod",
+          "Huusmand - lever af en Jordlod",
+          "Lever af en Jordlod - Huusmand",
+          "lever af en Jordlod, Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusmand, lever af sin Jordlod"
+      },
+      {
+        "from": [
+          "Inderste og Aftægtsmand",
+          "Aftægtsmand og Inderste",
+          "Inderste og aftægtsmand",
+          "inderste og aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Snedkersvend, hendes søn",
+          "hendes Søn, Snedkersvend",
+          "hendes søn, Snedkersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "tjenestekarl",
+          "Tjenestekarl",
+          "[tjenestekarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "tjenestekarl deres søn",
+          "deres Søn, Tjenestekarl",
+          "tjenestekarl, deres søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "hendes søn",
+          "hendes Søn",
+          "Hendes Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "hendes søn"
+      },
+      {
+        "from": [
+          "Huusmand og Dagleier",
+          "Huusmand og dagleier",
+          "Dagleier og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Dagleier"
+      },
+      {
+        "from": [
+          "Indsidder og Væver",
+          "Væver og Indsidder",
+          "indsidder og væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Inderste, Dagleier",
+          "Dagleier, Inderste",
+          "Dagleier. Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Dagleier"
+      },
+      {
+        "from": [
+          "deres Søn, Skræder",
+          "deres Søn Skræder",
+          "deres søn, Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Indsidder, Skrædder",
+          "Skrædder - Indsidder",
+          "Skrædder, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "hattemagerlærling",
+          "Hattemagerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hattemager"
+      },
+      {
+        "from": [
+          "hendes Søn, Skræderlærling",
+          "hendes søn, Skræderlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Træskokarl",
+          "træskokarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskokarl"
+      },
+      {
+        "from": [
+          "Kirkesanger og Skolelærer",
+          "Skolelærer og Kirkesanger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kirkesanger og Skolelærer"
+      },
+      {
+        "from": [
+          "Karl, Søn af Huusfaderen",
+          "Karl, søn af Huusfaderen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Karl"
+      },
+      {
+        "from": [
+          "hendes søn, farer til Søes",
+          "hendes Søn, farer til Søes"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Matros"
+      },
+      {
+        "from": [
+          "deres Søn, Snedkersvend",
+          "Snedkersvend, deres søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "deres søn og tjenestekarl",
+          "deres Søn og Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Skomagerlærling",
+          "skomagerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Dagleier, deres Søn",
+          "deres Søn, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Daglejer og Huusmand",
+          "Huusmand og Daglejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Nærer sig af sin Jordlod",
+          "nærer sig af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Nærer sig af sin Jordlod"
+      },
+      {
+        "from": [
+          "hans Søn og Tjenestekarl",
+          "hans søn og tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "deres Søn, Smedesvend",
+          "deres søn, Smedesvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Inderste og Bødker",
+          "Bødker og Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Indsidder og Dagleier",
+          "Dagleier og Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusmand, Væver",
+          "Huusmand Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Dagleier, Inderste og Almisselem",
+          "Inderste og Dagleier og Almisselem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Indsidder, Dagleier",
+          "Dagleier, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Indsidder, Væver",
+          "Væver, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Gaardmand og Sognefoged",
+          "Sognefoged og Gaardmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gaardmand og Sognefoged"
+      },
+      {
+        "from": [
+          "Huusmand og Smed",
+          "Smed og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "deres tjenestekarl",
+          "deres Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Indsider og Dagleier",
+          "Dagleier og Indsider"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "hendes Søn, Muursvend",
+          "hendes søn, Muursvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Gaardbruger og Sognefoged",
+          "Sognefoged og Gaardbruger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged "
+      },
+      {
+        "from": [
+          "Aftægtsmand",
+          "aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Huusmand og Skræder",
+          "Skræder og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "landvæsenslærling",
+          "Landvæsenslærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "landvæsenslærling"
+      },
+      {
+        "from": [
+          "deres Søn, Styrmand",
+          "deres søn, Styrmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Styrmand"
+      },
+      {
+        "from": [
+          "skolediscipel, logerende",
+          "Skolediscipel, Logerende"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skoleelev"
+      },
+      {
+        "from": [
+          "Indsidder og Smed",
+          "Smed og Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "i Væverlære",
+          "i væverlære"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Inderste og Væver",
+          "Væver og Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Farversvend",
+          "farversvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Farver"
+      },
+      {
+        "from": [
+          "tjenestedreng",
+          "Tjenestedreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Smed-Svend",
+          "Smedsvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Inderste",
+          "Inderste, Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Betjent ved Møllen",
+          "betjent ved Møllen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Betjent "
+      },
+      {
+        "from": [
+          "Almisselem",
+          "almisselem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Almisselem"
+      },
+      {
+        "from": [
+          "Handelsbetjent",
+          "handelsbetjent"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsbetjent"
+      },
+      {
+        "from": [
+          "Deres Søn og Wæwer",
+          "deres Søn og Wæwer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "indsidder og væversvend",
+          "Væversvend og Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Læredreng, deres Søn",
+          "deres søn, læredreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Læredreng, deres Søn"
+      },
+      {
+        "from": [
+          "D. Tjenestekarl",
+          "D. tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Tjenestekarl hos Forældrene",
+          "Tjenestekarl hos forældrene"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Huusmand og Træskomand",
+          "Træskomand og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Skomagersvend",
+          "skomagersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "røgter",
+          "Røgter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "røgter"
+      },
+      {
+        "from": [
+          "Mandens fader og Aftægtsmand",
+          "Mandens fader og aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Personel Capellan",
+          "personel Capellan"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Capellan"
+      },
+      {
+        "from": [
+          "Handelsbetjent, hans søn",
+          "hans søn, Handelsbetjent"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsbetjent"
+      },
+      {
+        "from": [
+          "deres søn, handelsbetjent",
+          "Handelsbetjent, deres Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsbetjent"
+      },
+      {
+        "from": [
+          "deres søn, farer til Søes",
+          "deres Søn, farer til Søes"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Matros"
+      },
+      {
+        "from": [
+          "Hans fader og Aftægtsmand",
+          "Hans Fader og Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Inderste og Dagleier",
+          "Dagleier og Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "deres Søn, Søemand",
+          "deres søn, Søemand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Stolemager",
+          "stolemager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stolemager"
+      },
+      {
+        "from": [
+          "Bagersvend",
+          "bagersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      },
+      {
+        "from": [
+          "Tærsker",
+          "tærsker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tærsker"
+      },
+      {
+        "from": [
+          "deres Søn, Snedker",
+          "deres søn, Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Matros, hendes søn",
+          "hendes Søn, Matros"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Matros"
+      },
+      {
+        "from": [
+          "Rygter",
+          "Rÿgter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rygter"
+      },
+      {
+        "from": [
+          "broder og tjenestekarl",
+          "Broder og Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Handelslærling",
+          "handelslærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelslærling"
+      },
+      {
+        "from": [
+          "Huusmand og Skovfoged",
+          "Skovfoged og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skovfoged"
+      },
+      {
+        "from": [
+          "hendes Søn, Væver",
+          "hendes søn, Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Exam. Juris",
+          "Exam. juris"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Exam. Juris"
+      },
+      {
+        "from": [
+          "Aftægtsmand og Skovfoged",
+          "Skovfoged og Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skovfoged"
+      },
+      {
+        "from": [
+          "Svend",
+          "svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Svend"
+      },
+      {
+        "from": [
+          "Indsidder og Træskomand",
+          "Træskomand og Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Bødkerlærling",
+          "bødkerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Guld og Sølvforarbeider",
+          "Guld- og Sølvforarbeider"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Guld og Sølvforarbeider"
+      },
+      {
+        "from": [
+          "Aftegtsmand",
+          "aftegtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "deres søn, Træskokarl",
+          "deres Søn, Træskokarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskokarl"
+      },
+      {
+        "from": [
+          "Huusmand og Skomager",
+          "Skomager og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Bødkersvend",
+          "bødkersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "hendes Søn Skræder",
+          "hendes Søn, Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "guldsmedesvend",
+          "Guldsmedesvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Guldsmed"
+      },
+      {
+        "from": [
+          "Rebslagersvend",
+          "rebslagersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rebslager"
+      },
+      {
+        "from": [
+          "Skolediscipel",
+          "skolediscipel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skoleelev"
+      },
+      {
+        "from": [
+          "Huusmand og Væver",
+          "Væver og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "deres Søn, i Væverlære",
+          "deres søn, i Væverlære"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huusfaders Fader, Aftægtsmand",
+          "Aftægtsmand, Huusfaders Fader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": " Aftægtsmand"
+      },
+      {
+        "from": [
+          "Indsider, Væver",
+          "Væver, Indsider"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Tjenestedreng hos Forældrene",
+          "Tjenestedreng hos forældrene"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Huusmand og Muurmester",
+          "Muurmester og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "snedkersvend, logerende",
+          "Snedkersvend, Logerende"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "bagerdreng",
+          "Bagerdreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      },
+      {
+        "from": [
+          "Skoemagersvend",
+          "Skoemager-Svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "møllersvend",
+          "Møllersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Huusfæster og Dagleier",
+          "Dagleier og Huusfæster"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "hospitalslem",
+          "Hospitalslem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "hospitalslem"
+      },
+      {
+        "from": [
+          "lever af sine Midler",
+          "Lever af sine Midler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "lever af sine Midler"
+      },
+      {
+        "from": [
+          "Tjenestekarl og Militaier",
+          "Tjenestekarl og militaier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Tjenestetyende",
+          "tjenestetyende"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestetyende"
+      },
+      {
+        "from": [
+          "Huusmand, Dagleier",
+          "Dagleier, Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Aftægtsmand",
+          " Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Læredreng",
+          "læredreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Læredreng"
+      },
+      {
+        "from": [
+          "Opholdsmand",
+          "opholdsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Opholdsmand"
+      },
+      {
+        "from": [
+          "fattiglem",
+          "Fattiglem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Fattiglem"
+      },
+      {
+        "from": [
+          "lærling",
+          "Lærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Lærling"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Hjulmand",
+          "Hiulmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      },
+      {
+        "from": [
+          "Smedelærling",
+          "Smedlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Contorist",
+          "kontorist"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kontorist"
+      },
+      {
+        "from": [
+          "Toldbetjent",
+          "Toldbetient"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Toldbetjent"
+      },
+      {
+        "from": [
+          "Sadelmagersvend",
+          "Saddelmagersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Indsidder og Tjenestekarl",
+          "Indsider og Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Skræder",
+          "Skrædder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Smededreng",
+          "Smeddedreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Aftægtsmand og Skrædder",
+          "Aftægtsmand og Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Almisselem",
+          "Almisse Lem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Almisselem"
+      },
+      {
+        "from": [
+          "Skomager",
+          "Skomagger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Træskoehandler",
+          "Træskohandler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskohandler"
+      },
+      {
+        "from": [
+          "hans Søn, Skrædder",
+          "hans søn, Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Sadelmagermester",
+          "Saddelmagermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Skibscaptain",
+          "Skibskaptain"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Indsidder og Saddelmager",
+          "Indsidder og Sadelmager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Tjenestekarl",
+          "Tjeneste Karl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "skræddersvend",
+          "Skrædersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "væve lærling",
+          "vævelærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Dreier",
+          "Drejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Drejer"
+      },
+      {
+        "from": [
+          "Feldbereder",
+          "Feldberedder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Feldbereder"
+      },
+      {
+        "from": [
+          "Træskokarl",
+          "Tærskekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskokarl"
+      },
+      {
+        "from": [
+          "Handelsbetjent",
+          "Handelsbetient"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsbetjent"
+      },
+      {
+        "from": [
+          "deres Søn og Skræder",
+          "deres søn og Skrædder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Indsidder og Skomager",
+          "Indsider og Skomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "D. Tjenestedreng",
+          "Tjeneste Dræng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Skræderdreng",
+          "Skrædderdreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "hans Tiener",
+          "hans Tjener"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Inderste og Skræder",
+          "Inderste og Skrædder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Corporal ved H.K.H. Pr. Fred. Ferdinands Dragonregiment",
+          "Korporal ved H.K.H. Pr. Fred. Ferdinands Dragonregiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "skrædderlærling",
+          "Skræderlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Indsidder og Skræder",
+          "Indsidder og Skrædder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Vanvittig, har Ophold i Gaarden",
+          "vanvittig, har ophold i Gaarden"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vanvittig"
+      },
+      {
+        "from": [
+          "Corporal",
+          "Korporal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand og Hjulmand",
+          "Huusmand og Hjuulmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Træskomand",
+          "Træskoemand",
+          "Træeskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Meieri Forpagter",
+          "Meierieforpagter",
+          "Mejeri Forpagter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Mejeri "
+      },
+      {
+        "from": [
+          "Træskokarl",
+          "Træskoekarl",
+          "Træeskoekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskokarl"
+      },
+      {
+        "from": [
+          "Skrædermester",
+          "Skræder, Indsidder",
+          "Skrædermæster"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Sadelmagerlærling",
+          "Stolemagerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Træskoemager",
+          "Træskomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Sadelmager",
+          "Stolemager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Corporal ved Prins Ferdinands Regiment",
+          "Corporal ved Prinds Ferdinands Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Husmand og Væver",
+          "Huusmand og Wæver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huusmand og Snedker",
+          "Husmand og Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "deres Søn Træskoemand",
+          "deres søn, Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Inderste og Gartner",
+          "Inderste, Gartner"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gartner"
+      },
+      {
+        "from": [
+          "Giæstgiver",
+          "Gæstgiver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gæstgiver"
+      },
+      {
+        "from": [
+          "Hjulmand",
+          "Hjuulmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      },
+      {
+        "from": [
+          "Dagleier",
+          "Daglejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Almisselem",
+          "Almisslem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Almisselem"
+      },
+      {
+        "from": [
+          "forhen Kiøbmand",
+          "førhen Kiøbmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Værtshusholder",
+          "Værtshuusholder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Værtshusholder"
+      },
+      {
+        "from": [
+          "Huusmand, tjener som Dagleier",
+          "Huusmand, tjener som Daglejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Kornmaaler",
+          "Grynmaler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Gaardmand, Kirkeværge",
+          "Gaardmand og Kirkeværge"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kirkeværge"
+      },
+      {
+        "from": [
+          "Eier af Huset og Væver",
+          "Eier af Huuset og Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Reebslagermester",
+          "Rebslagermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rebslager"
+      },
+      {
+        "from": [
+          "Søemand",
+          "Sømand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Væver",
+          "Wæwer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Avelsforvalter",
+          "Avlsforvalter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Avlsforvalter"
+      },
+      {
+        "from": [
+          "Muursvend",
+          "Mursvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Gaardmand og Stævningsmand",
+          "Gaardmand og Stevningsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stævningsmand"
+      },
+      {
+        "from": [
+          "Tjenestekarl",
+          "Tienestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Meieribestyrer",
+          "Meieriebestyrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Mejeri"
+      },
+      {
+        "from": [
+          "Tienestedreng",
+          "Tenestedreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "røgter",
+          "Rygter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Røgter"
+      },
+      {
+        "from": [
+          "Giørtler",
+          "Gjørtler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gjørtler"
+      },
+      {
+        "from": [
+          "deres Søn, Søefarende",
+          "deres Søn, Søfarende"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Leutenant",
+          "Lieutenant"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Huusmand og Træskoemager",
+          "Huusmand og Træskomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Graver og Dagleier",
+          "Graver og Daglejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Dagleier"
+      },
+      {
+        "from": [
+          "Skiærslipper",
+          "Skjerslibber"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skærsliber"
+      },
+      {
+        "from": [
+          "Skomager",
+          "Skoemager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Skomagermester",
+          "Skoemagermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Dreiermester",
+          "Drejermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Drejer"
+      },
+      {
+        "from": [
+          "Hans Søn Wæwer",
+          "hans søn, Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Indsidder, Daglejer",
+          "Indsider, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Rebslager",
+          "Reebslager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rebslager"
+      },
+      {
+        "from": [
+          "Inderste og Træskoemand",
+          "Inderste og Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Gjørtlermester",
+          "Giørtlermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gjørtler"
+      },
+      {
+        "from": [
+          "Muurmester",
+          "Muurmæster"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "hendes Søn Træskoemand",
+          "hendes søn, Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Væverdreng",
+          "Wæverdreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Blegemand",
+          "Blegmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Blegemand"
+      },
+      {
+        "from": [
+          "Gaardmand, Sognefoged og Lægdsmand",
+          "Gaardmand, Sognefoged og Lægsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "Kjøbmand",
+          "Kiøbmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Byesmed",
+          "Bysmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Tjenestekarl i Gaarden",
+          "tjenestekarl i Gaarden No 3"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Dyrlæge",
+          "Dyrelæge"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Dyrlæge"
+      },
+      {
+        "from": [
+          "Klodsmager",
+          "Klosmager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Klodsmager"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Daglejer",
+          "Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Mejeri ",
+          "Mejeri"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Mejeri "
+      },
+      {
+        "from": [
+          "Betient ved Møllen",
+          "Betjente ved Møllen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Betjent"
+      },
+      {
+        "from": [
+          "tjenestedreng i Gaarden",
+          "tjenestedreng i gården"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Vægter",
+          "Wægter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vægter"
+      },
+      {
+        "from": [
+          "Sognefoged",
+          "Sognefoged "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "deres tjenestedreng",
+          "deres Tjenestedreng"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Glarmester",
+          "Glarmæster"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Glarmester"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Dragon ved Prins Ferdinands Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Dragon"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "rekrut ved H.K.H. Pr. Fr. Ferd. Reg. lette Drag."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Handelslærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handel"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Kirkesanger og Skolelærer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Smedesvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Høker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand og Bødker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Snedkermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Dragon af Prins Ferdinands Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Snedkerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Snedkersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Tømmersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Væverlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Snedker og Tømmermand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Kudsk"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kusk"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Tømmermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Bagerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand, Daglejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Indsidder og Bødker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Tømmermand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Matros"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Skipper"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 100,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "hendes Søn, Tømmermand",
+          "hendes Søn, Tømmersvend",
+          "hendes søn, Tømmerkarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Blikkenslager",
+          "Blikkenslagermester",
+          "Blikkenslagersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Blikkenslager"
+      },
+      {
+        "from": [
+          "deres Søn, Tømmerdreng",
+          "deres Søn, Tømmerswend",
+          "deres søn, Tømmermand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Huusmand og Tømmermand",
+          "Huusmand og Tømmermester",
+          "Huusmand og Tømmersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "deres søn, Smed",
+          "deres søn, Smededreng",
+          "deres søn, Smedsvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 100,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gaardmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 100,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand, lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 100,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 100,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        },
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "erhverv",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Handel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column erhverv"
+  }
+]

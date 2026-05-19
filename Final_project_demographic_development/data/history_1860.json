@@ -1,0 +1,6812 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "herred",
+          "expression": "value",
+          "columnName": "herred",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Hads",
+                "l": "Hads"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "alder",
+    "expression": "grel:value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column alder using expression grel:value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "alder",
+    "expression": "grel:value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column alder using expression grel:value.toNumber()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[deres søn]",
+          "deres Søn",
+          "Deres Søn",
+          "[deres] Søn",
+          "[deres Søn]",
+          "deres SØn",
+          "deres Søn, ...??",
+          "deres søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "[hans søn]",
+          "[hans] Søn",
+          "hans Søn",
+          "[hans Søn]",
+          "Hans Søn",
+          "[Hans] Søn",
+          "hans [søn]",
+          "[Hans Søn]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "[tjenestekarl]",
+          "Tjenestekarl",
+          "[Tjenestekarl]",
+          " Tjenestekarl",
+          "Tjenestekar[l]",
+          "Tjenestekarl,",
+          "[Tjeneste]karl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "[hendes søn]",
+          "hendes Søn",
+          "Hendes Søn",
+          "[hendes] Søn",
+          "hendes [søn]",
+          "Hendes Søn, ....?",
+          "[hendes Søn]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "[deres søn, tjenestekarl]",
+          "deres Søn, Tjenestekarl",
+          "Deres Søn, Tjenestekarl",
+          "[deres Søn, Tjenestekarl]",
+          "[deres Søn], Tjenestekarl",
+          "deres Søn, [tjenestekarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "[deres søn], Væver",
+          "deres Søn, Væver",
+          "Væver, deres Søn",
+          "Deres Søn, Væver",
+          "Væver, [deres søn]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "hendes Søn, tjener Moderen",
+          "[hendes søn], tjener Moderen",
+          "hendes [søn], tjener Moderen",
+          "[hendes Søn, tjener Moderen]",
+          "hendes Søn, [tjener Moderen]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "Indsidder, Dagleier og Huusfader",
+          "Dagleier og Indsidder, Huusfader",
+          "Indsidder og Dagleier, Huusfader",
+          "Indsidder og Huusfader, Dagleier",
+          "Indsidder, Huusfader og Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "[deres søn], Sømand",
+          "[deres Søn, Sømand]",
+          "Sømand, deres Søn",
+          "[deres Søn], Sømand",
+          "deres Søn, Sømand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Huusfaderens [fader]",
+          "Aftægtsmand, Huusfaderens Fader",
+          "Huusfaderens [fader, aftægtsmand]",
+          "[Aftægtsmand, Huusfaderens fader]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Huusmand, lever af sin Jordlod, Huusfader",
+          "Huusmand, Huusfader, lever af sin Jordlod",
+          "Huusfader, Huusmand, lever af sin Jordlod",
+          "Huusmand, Huusfader, Lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Skolelærer og Kirkesanger, Huusfader",
+          "Huusfader, Kirkesanger og Skolelærer",
+          "Kirkesanger og Skolelærer, Huusfader",
+          "Skolelærer, Kirkesanger og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "deres Søn, tjener Faderen",
+          "[deres søn], tjener Faderen",
+          "Deres Søn, tjener Faderen",
+          "deres Søn, tjener faderen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "[deres tjenestekarl]",
+          "deres Tjenestekarl",
+          "deres [tjenestekarl]",
+          "Deres Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "deres Søn, Tømrer",
+          "[deres søn], Tømrer",
+          "[deres Søn, Tømrer]",
+          "Tømrer, deres Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "deres Søn, Wæver",
+          "Deres Søn, Wæver",
+          "Wæver, deres Søn",
+          "[deres søn], Wæver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "[deres søn], Træskokarl",
+          "deres Søn, Træskokarl",
+          "Deres Søn, Træskokarl",
+          "Træskokarl, deres Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskokarl"
+      },
+      {
+        "from": [
+          "Gaardmand, Huusfader",
+          "Huusfader, Gaardmand",
+          "Gaardmand Huusfader",
+          "Huusfader, Gaardmand, ??"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Huusfaders Fader, Aftægtsmand",
+          "Aftægts[mand], Huusfaders [fader]",
+          "Aftægtsmand, Huusfaders Fader",
+          "[Aftægtsmand, Huusfaders fader]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "[tjenestedreng]",
+          "Tjenestedreng",
+          "[Tjenestedreng]",
+          "Tjenestedreng,"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "hans Broder",
+          "[hans broder]",
+          "Hans Broder",
+          "[hans Broder]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "hans Broder"
+      },
+      {
+        "from": [
+          "deres Barn",
+          "Deres Barn",
+          "[deres Barn]",
+          "[deres] Barn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "deres Barn"
+      },
+      {
+        "from": [
+          "Hmd., Huusf., Dagleier",
+          "Hmd., Dagleier, Huusf.",
+          "Hmd. Dagleier, Huusf.",
+          "Huusf., Hmd., Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "hendes Søn, Væver",
+          "Væver, hendes Søn",
+          "[hendes søn], Væver",
+          "Hendes Søn, Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "deres Søn, Skræder",
+          "[deres søn], Skræder",
+          "Deres Søn, Skræder",
+          "Skræder, deres Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Huuseier, Dagleier, Huusfader",
+          "Dagleier, Huuseier, Huusfader",
+          "Huuseier, Huusfader, Dagleier",
+          "Huusfader, Huuseier, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Hmd., Sivfletning, Husfader",
+          "Sivfletning, Husfader, Hmd.",
+          "Sivfletning, Husfader (Hmd.)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sivfletter"
+      },
+      {
+        "from": [
+          "[Dragon ved 3die Dragon Regiment]",
+          "Dragon ved 3die Dragon Regiment",
+          "Dragon ved 3die Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Huusfader",
+          "Huusfader, Aftægtsmand",
+          "Huusfader, Aftægts[mand]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Huuseier, lever af sin Jordlod, Huusfader",
+          "Huuseier, Lever af sin Jordlod, Huusfader",
+          "Huuseier, Huusfader, lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husejer"
+      },
+      {
+        "from": [
+          "Dreierlærling",
+          "[Dreier]lærling",
+          "[Dreierlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Drejer"
+      },
+      {
+        "from": [
+          "Huusmand, Huusfader, lever væsentlig af sin Lod",
+          "Huusmand, Huusfader lever væsentlig af sin Lod,",
+          "Huusmand, Huusfader, lever væsentlig af sin Lod,"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusmand, Huusfader, lever væsentlig af sin Lod"
+      },
+      {
+        "from": [
+          "[tjenestepige]",
+          "Tjenestepige",
+          "[Tjenestepige]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "[tjenestepige]"
+      },
+      {
+        "from": [
+          "Huusmand, Væver, Huusfader",
+          "Huusmand, Huusfader, Væver",
+          "Væver, Huusmand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huusfaderens Fader, der af ham forsørges",
+          "Huusfaderens [fader], der af ham forsørges",
+          "Huusfaderens [fader], der forsørges af ham"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Hendes Søn, Dagleier",
+          "[hendes søn], Dagleier",
+          "hendes Søn, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Af sin Jord, Huusfader",
+          "Huusfader, Af sin Jord",
+          "Huusfader, af sin Jord"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Skræddersvend",
+          "[skræddersvend]",
+          "[Skræddersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "[Fattiglem]",
+          "Fattiglem",
+          "[fattiglem]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Fattiglem"
+      },
+      {
+        "from": [
+          "Indsidder, Dagleier, Husfader",
+          "Dagleier, Husfader (Indsidder)",
+          "Husfader, Indsidder, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "[Matros]",
+          "Matros",
+          "Matros,"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Matros"
+      },
+      {
+        "from": [
+          "Huusmd., Dagleier, Huusf.",
+          "Huusf., Huusmd., Dagleier",
+          "Huusmd., Huusf., Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huuseier, Væver, Huusfader",
+          "Huuseier, Huusfader, Væver",
+          "Væver, Huusfader, Huuseier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "lever af sin Jordlod, Huusfader",
+          "Huusfader, lever af sin Jordlod",
+          "Lever af sin Jordlod, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Aftægtsmand, forsørges af Huusfaderen",
+          "[aftægtsmand], forsørges af Huusfaderen",
+          "Aftægtsmand, af Huusfaderen forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Gmd., Huusfader",
+          "Huusfader, Gmd.",
+          "Gmd. Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Hans Fader",
+          "hans Fader",
+          "hans [fader]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hans Fader"
+      },
+      {
+        "from": [
+          "Huusfaderens Fader, Opholdsmand",
+          "Huusfaderens [fader], Opholdsmand",
+          "Opholdsmand, Huusfaderens [fader]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Opholdsmand"
+      },
+      {
+        "from": [
+          "deres Søn, Snedker",
+          "[deres søn], Snedker",
+          "Deres Søn, Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "[deres datter]",
+          "deres Datter",
+          "Deres Datter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Datter"
+      },
+      {
+        "from": [
+          "Tømmersvend, hendes Søn",
+          "[hendes Søn, Tømmersvend]",
+          "hendes Søn, Tømmersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "hans Lærling",
+          "[hans] Lærling",
+          "[hans Lærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Lærling"
+      },
+      {
+        "from": [
+          "Huusfaderens Svigerfader, der af ham forsørges",
+          "Huusfaderens Sviger[fader], der af ham forsørges",
+          "Huusfaderens [svigerfader], der af ham forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaderens Svigerfader, der af ham forsørges"
+      },
+      {
+        "from": [
+          "Hmd., Dagleier, Huusfader",
+          "Hmd., Huusfader, Dagleier",
+          "Huusfader, Dagleier, Hmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Husfaderens Søn",
+          "[Husfaderens] Søn",
+          "[husfaderens søn]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "Husmand, Husfader (Væver)",
+          "Husmand, Husfader, Væver",
+          "Husmand, Væver, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huusmand, Skræder, Huusfader",
+          "Huusfader, Huusmand, Skræder",
+          "Huusmand, Huusfader, Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Smedelærling",
+          "[Smedelærling]",
+          "[smedelærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "[deres søn], Snedkersvend",
+          "Snedkersvend, deres Søn",
+          "deres Søn, Snedkersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Hmd., Huusf., Væver",
+          "Hmd., Væver, Huusf.",
+          "Huusf., Hmd., Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "deres Søn, Murer",
+          "Murer, deres Søn",
+          "[deres søn], Murer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "[deres søn], Træskomager",
+          "deres Søn, Træskomager",
+          "Deres Søn, Træskomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Huusmand, Dagleier og Huusfader",
+          "Huusmand, Huusfader og Dagleier",
+          "Huusmand og Dagleier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Tømmersvend",
+          "[Tømmersvend]",
+          "Tømmer-Svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "deres Søn, Muursvend",
+          "Muursvend, Deres Søn",
+          "Muursvend, deres Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Søn",
+          "[Søn]",
+          "[søn]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Søn"
+      },
+      {
+        "from": [
+          "Aftægtsmand",
+          "[aftægtsmand]",
+          "[Aftægtsmand]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Huusfaders Fader, der af ham forsørges",
+          "Huusfaders [fader], der af ham forsørges",
+          "Huusfaders Fader, der forsørges af ham"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaders Fader, der af ham forsørges"
+      },
+      {
+        "from": [
+          "Deres Søn, Skrædersvend",
+          "[deres søn], Skrædersvend",
+          "deres Søn, Skrædersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Smedesvend",
+          "[Smedesvend]",
+          "[smedesvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Dagleier og Huuseier, Huusfader",
+          "Dagleier, Huusfader og Huuseier",
+          "Huuseier og Dagleier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusfaders Svigerfader, der af ham forsørges",
+          "Huusfaders [svigerfader], der af ham forsørges",
+          "Huusfaders Sviger[fader], der af ham forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaders Svigerfader, der af ham forsørges"
+      },
+      {
+        "from": [
+          "hans Kone",
+          "Hans Kone",
+          "[hans kone]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "hans Kone"
+      },
+      {
+        "from": [
+          "Bagerlærling",
+          "[Bager]lærling",
+          "[Bagerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Mandens Fader",
+          "Mandens Fader, [aftægtsmand]",
+          "mandens Fader, Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "[arrestant]",
+          "[Arrestant]",
+          "Arrestant"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arrestant"
+      },
+      {
+        "from": [
+          "Hendes Søn, Snedker",
+          "Snedker, hendes Søn",
+          "[hendes søn], Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[deres søn], tjener Forældrene",
+          "deres Søn, tjener Forældrene",
+          "[deres Søn, tjener Forældrene]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjener forældrene"
+      },
+      {
+        "from": [
+          "Dagleier, Husfader",
+          "Husfader, Dagleier",
+          "[Dagleier], Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Bagersvend",
+          "[Bager]Svend",
+          "[Bager]svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Hans Kone, Huusmoder",
+          "Huusmoder, Hans Kone",
+          "Huusmoder, hans Kone"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hans Kone, Huusmoder"
+      },
+      {
+        "from": [
+          "[hendes datter]",
+          "hendes Datter",
+          "hendes [datter]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "[hendes datter]"
+      },
+      {
+        "from": [
+          "Huusfaders Fader, som af ham forsørges",
+          "Huusfaders [fader], som af ham forsørges",
+          "Huusfaders [fader], som forsørges af ham"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaders Fader, som af ham forsørges"
+      },
+      {
+        "from": [
+          "Huusmd., Dagleier, Huusfad.",
+          "Huusmd., Huusfad., Dagleier",
+          "Huusmd., Huusfad:, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Indsidder, Dagleier, Huusfader",
+          "Indsidder, Huusfader, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusmand, Smed og Huusfader",
+          "Smed og Huusmand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Skrædderlærling",
+          "[Skrædderlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "[Dragon ved 3. Regiment]",
+          "Dragon ved 3. Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Hans Broder, Tjenestekarl",
+          "hans Broder, Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Tømmermand, Huusfader",
+          "Huusfader, Tømmermand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Gmd., Huusfader, Sognefoged",
+          "Gmd., Sognefoged, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Hmd., Huusf., Skræder",
+          "Hmd., Skræder, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Blikkenslagersvend",
+          "[Blikkenslagersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Blikkenslager"
+      },
+      {
+        "from": [
+          "Karethmagersvend",
+          "[Karethmagersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Karethmager"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Huusf.",
+          "Huusf. Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Huusmand, Bysmed, Huusfader",
+          "Huusmand, Huusfader, Bysmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Huusfader, Klodsmager",
+          "Klodsmager, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Klodsmager"
+      },
+      {
+        "from": [
+          "Huusmand, Dagleier",
+          "Dagleier, Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Skomagerlærling",
+          "[Skomagerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "[deres søn], Dagleier",
+          "deres Søn, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Skoufoged, Huusfader",
+          "Huusfader, Skoufoged"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skovfoged"
+      },
+      {
+        "from": [
+          "Ernærer sig af sin Jordlod, Huusfader",
+          "Huusfader, ernærer sig af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Gartner, Huusfader",
+          "Huusfader, Gartner"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gartner"
+      },
+      {
+        "from": [
+          "Gaardmand, Huusf.",
+          "Huusf., Gaardmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Huusmand og Træskomand, og Huusfader",
+          "Huusmand, Træskomand og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Hendes Søn, Træskomand",
+          "hendes Søn, Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Guldsmedsvend",
+          "[Guldsmedsvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Dicipel",
+          "[Dicipel]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Dicipel"
+      },
+      {
+        "from": [
+          "Gaardejer, Huusfader",
+          "Huusfader, Gaardejer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdejer"
+      },
+      {
+        "from": [
+          "Huuseier og Dagleier",
+          "Dagleier og Huuseier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Husmand, Snedker, Husfader",
+          "Husmand, Husfader, Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Indsidder og Dagleier",
+          "Dagleier og Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Inderste, Huusfader, Snedker",
+          "Snedker, Inderste, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "[deres søn], Matros",
+          "deres Søn, Matros"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Matros"
+      },
+      {
+        "from": [
+          "Aftægtsmand og Huuseier",
+          "Huuseier og Aftægtsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Skomager, Huusfader",
+          "Huusfader, Skomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Væversvend, Hendes Søn",
+          "hendes Søn, Væversvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Vægter, Huusfader",
+          "Huusfader, Vægter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vægter"
+      },
+      {
+        "from": [
+          "Indsidder, Dagleier",
+          "Dagleier, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Indsidder, Væver",
+          "Væver, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Karethmager",
+          "[Karethmager]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Karethmager"
+      },
+      {
+        "from": [
+          "Murersvend",
+          "[Murersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Kludesamler, Huusfader",
+          "Huusfader, Kludesamler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kludesamler"
+      },
+      {
+        "from": [
+          "Møllerlærling",
+          "[Møllerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Svigersøn, Dagleier",
+          "Svigersøn, dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Kobbersmedelærling",
+          "[Kobbersmedelærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Uhrmagerlærling",
+          "[Uhrmagerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Urmager"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Hmd., lever af sin Jordlod, Huusf.",
+          "Hmd., Huusf., lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hmd., lever af sin Jordlod, Huusf."
+      },
+      {
+        "from": [
+          "hendes Datter, tjener Moderen",
+          "[hendes datter], tjener Moderen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "hendes Datter, tjener Moderen"
+      },
+      {
+        "from": [
+          "Huusmand, Huusfader, Arbeidsmand",
+          "Huusmand, Arbeidsmand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "husmand"
+      },
+      {
+        "from": [
+          "Lever af sin Jord, Huusf.",
+          "Huusf., lever af sin Jord"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Huuseier, lever af sin Jordlod",
+          "H[uus]eier, lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husejer"
+      },
+      {
+        "from": [
+          "Steenhugger",
+          "[Steenhugger]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stenhugger"
+      },
+      {
+        "from": [
+          "Indsidder, Murer",
+          "Murer, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Commis",
+          "[Commis]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Commis"
+      },
+      {
+        "from": [
+          "Værtshusholder, Huusfader",
+          "[Værtshusholder], Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Værtshusholder"
+      },
+      {
+        "from": [
+          "Wæver, Huusfader",
+          "Huusfader, Wæver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Hmd., Huusf., Murer",
+          "Hmd., Murer, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Huusfader, Inderste, Smed",
+          "Inderste, Smed, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Væver og Indsidder",
+          "Indsidder og Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Smed og Indsidder",
+          "Indsidder og Smed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed "
+      },
+      {
+        "from": [
+          "Huusmand, Bødker, Huusfader",
+          "Bødker, Huusmand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Grdmd., Huusfader",
+          "Huusfader, Grdmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "[Opsynsmand]",
+          "Opsynsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Opsynsmand"
+      },
+      {
+        "from": [
+          "Huusfader, Klosmager",
+          "Klosmager, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Klodsmager"
+      },
+      {
+        "from": [
+          "Huusfader og Kjøbmand",
+          "Kjøbmand og huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Læredreng",
+          "[Læredreng]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Læredreng"
+      },
+      {
+        "from": [
+          "Smed og Huuseier",
+          "Huuseier og Smed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Huusfader, Gaardbruger",
+          "Gaardbruger, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfader, Gaardbruger"
+      },
+      {
+        "from": [
+          "Dragon ved 3. Dr.",
+          "[Dragon ved 3. Dr.]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "[deres tjenestedreng]",
+          "deres [tjenestedreng]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Huusmand, Smed",
+          "Smed, Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Sognepræst, Huusfader",
+          "Huusfader, Sognepræst"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognepræst"
+      },
+      {
+        "from": [
+          "Handelsbetjent",
+          "[Handelsbetjent]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsbetjent"
+      },
+      {
+        "from": [
+          "Snedkersvend",
+          "[Snedkersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Malerlærling",
+          "[Malerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Maler"
+      },
+      {
+        "from": [
+          "Indsidder",
+          "Indsidder,"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Indsidder"
+      },
+      {
+        "from": [
+          "deres Søn, Sømand, fraværende i Coffardifart, hvor vides ei",
+          "[deres søn], Sømand, fraværende i Coffardifart, hvor vides ei"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Huusfaders Svigerfader, der af ham forsørges",
+          "Aftægtsmand, Huusfaders [svigerfader], der af ham forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Væver, Huusfad.",
+          "Huusfad., Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Deres Søn, Lærling",
+          "[deres søn], Lærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Lærling"
+      },
+      {
+        "from": [
+          "Konens Fader, Aftægtsmand",
+          "Aftægtsmand, Konens Fader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "[Dicipel i Aarhuus Cathedral Skole]",
+          "Dicipel i Aarhuus Cathedral Skole"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skoleelev"
+      },
+      {
+        "from": [
+          "Skomagersvend",
+          "[Skomagersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "[Smaahandel]",
+          "Smaahandel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Småhandel"
+      },
+      {
+        "from": [
+          "[deres Svend]",
+          "deres Svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "[deres Svend]"
+      },
+      {
+        "from": [
+          "deres Søn, Væversvend",
+          "Deres Søn, Væversvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Bødker og Huuseier",
+          "Huuseier og Bødker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Arbeidsmd., Huusfader",
+          "Huusfader, Arbeidsmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Huusfæster, Dagleier, Huusfader",
+          "Huusfæster, Huusfader, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Dagleier"
+      },
+      {
+        "from": [
+          "Hjulmand, Huusfader",
+          "Huusfader, Hjulmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      },
+      {
+        "from": [
+          "Gaardeier og Huusfader",
+          "Huusfader og Gaardeier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdejer"
+      },
+      {
+        "from": [
+          "Bødkermester, Huusfader",
+          "Huusfader, Bødkermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Huusfader, Skrædersvend",
+          "Skrædersvend, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Indsidder, Skomager",
+          "Skomager, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Contorist, [deres] Søn",
+          "Contorist, deres Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kontorist"
+      },
+      {
+        "from": [
+          "Inderste, Dagleier, Huusfader",
+          "Inderste, Huusfader, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Bogbinderlærling",
+          "[Bogbinderlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bogbinder"
+      },
+      {
+        "from": [
+          "Opvarter",
+          "[Opvarter]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Opvarter"
+      },
+      {
+        "from": [
+          "Smed og Huusfader",
+          "Huusfader og Smed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed "
+      },
+      {
+        "from": [
+          "Gaardmand og Huusfader",
+          "Huusfader og Gaardmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Huusfader, Muursvend",
+          "Muursvend, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Skomager",
+          "[Skomager]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "[deres søn], Mursvend",
+          "deres Søn, Mursvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Karethmager Lærling",
+          "[Karethmager] Lærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Karetmager"
+      },
+      {
+        "from": [
+          "[elev]",
+          "Elev"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Elev"
+      },
+      {
+        "from": [
+          "Snedker, Huusfader",
+          "Huusfader, Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Huusfader, Hmd. [Huusmand]",
+          "Huusfader, Hmd. [huusmand]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Væver, Huusfaderens [broder]",
+          "Væver, Huusfaderens Broder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Gaardmd., Huusfader",
+          "Huusfader, Gaardmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Vognmand, Huusfader",
+          "Huusfader, Vognmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vognmand"
+      },
+      {
+        "from": [
+          "Deres Pleiebarn",
+          "deres Pleiebarn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Deres Pleiebarn"
+      },
+      {
+        "from": [
+          "Skolelærer, Kirkesanger, Huusfader",
+          "Kirkesanger, Skolelærer, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Huusmd., lever af sin Jordlod, Huusfader",
+          "Huusmd., Huusfader, lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Huusmoderens Fader",
+          "Huusmoderens [fader], Aftægts[mand]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Møller, Huusfader",
+          "Huusfader, Møller"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Bødkerlærling",
+          "[Bødkerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Træskomand, Huusfader",
+          "Huusfader, Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Dagleier og Huusfader",
+          "Huusfader og Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Gmd. og Huusfader",
+          "Huusfader og Gmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Huusfader og Sognefoged",
+          "Sognefoged og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "Kudsk",
+          "[Kudsk]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kusk"
+      },
+      {
+        "from": [
+          "Husfader, Skrædder",
+          "Skrædder, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Huusmand, Tømrer, Huusfader",
+          "Huusmand, Huusfader, Tømrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Lieutenant i 3. Dr. Reg.",
+          "[Lieutenant i 3. Dr. Reg.]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Stedsøn",
+          "[stedsøn]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stedsøn"
+      },
+      {
+        "from": [
+          "[Dicipel i Aarhuus Skole]",
+          "Dicipel i Aarhuus Skole"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skoleelev"
+      },
+      {
+        "from": [
+          "Hans Kone, Huusmod.",
+          "Huusmod., hans Kone"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hans Kone, Huusmod."
+      },
+      {
+        "from": [
+          "Væver og Huusmand",
+          "Huusmand og Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver "
+      },
+      {
+        "from": [
+          "Væver og Huuseier",
+          "Huuseier og Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver "
+      },
+      {
+        "from": [
+          "Lærling",
+          "[Lærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Lærling"
+      },
+      {
+        "from": [
+          "Skomagermester, Huusfader",
+          "Huusfader, Skomagermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Enkens [søn]",
+          "Enkens Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Enkens [søn]"
+      },
+      {
+        "from": [
+          "Huuseier og Murer",
+          "Murer og Huuseier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Huusfaderens Fader",
+          "Huusfaderens [fader]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaderens Fader"
+      },
+      {
+        "from": [
+          "[Dragon]",
+          "Dragon"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Gaardeier, Huusfader",
+          "Huusfader, Gaardeier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gaardejer"
+      },
+      {
+        "from": [
+          "Karetmagerlærling",
+          "[Karetmagerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Karetmager"
+      },
+      {
+        "from": [
+          "Logerende (Tegner)",
+          "Logerende, Tegner"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tegner"
+      },
+      {
+        "from": [
+          "Indsidder, Huusf., Dagleier",
+          "Indsidder, Dagleier, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusmand, Tækkemand, Huusfader",
+          "Huusmand, Huusfader, Tækkemand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tækkemand"
+      },
+      {
+        "from": [
+          "[Feldbereder Lærling]",
+          "[Feldbereder] Lærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Feldbereder"
+      },
+      {
+        "from": [
+          "Skolelærer og Kirkesanger",
+          "Kirkesanger og Skolelærer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer "
+      },
+      {
+        "from": [
+          "Gdmd., Huusfader",
+          "Huusfader, Gdmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "lever af sine Midler",
+          "Lever af sine Midler"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "lever af sine Midler"
+      },
+      {
+        "from": [
+          "Huusf., Jordbruger",
+          "Jordbruger, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jordbruger"
+      },
+      {
+        "from": [
+          "Huusf., Væver",
+          "Væver, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "[hendes tjenestekarl]",
+          "hendes Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Arbeidsmand og Indsidder",
+          "Indsidder og Arbeidsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdsmand "
+      },
+      {
+        "from": [
+          "Slagter, Huusfader",
+          "Huusfader, Slagter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Gaardmand, Sognefoged, Huusfader",
+          "Gaardmand, Huusfader, Sognefoged"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "Huuseier, Smed, Huusfader",
+          "Smed, Huuseier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Tjenestetyende",
+          "[Tjenestetyende]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestetyende"
+      },
+      {
+        "from": [
+          "Gaardeier, (Sognefoged), Huusfader",
+          "Gaardeier, Sognefoged, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "[deres søn] og [tjenestekarl]",
+          "[deres søn og tjenestekarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Huusmand og Wæver",
+          "Wæver og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Skolelærer, Huusfader",
+          "Huusfader, Skolelærer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Inderste, Huusfader",
+          "Huusfader, Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Huusfaders Broder, Tjenestekarl",
+          "Huusfaders [broder], [tjenestekarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Inds., Dagleier, Huusf.",
+          "Inds., Huusf., Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusmd., Huusfader, Murer",
+          "Huusmd., Murer, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Bagermester",
+          "[Bagermester]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      },
+      {
+        "from": [
+          "Huusf., Træskomand",
+          "Træskomand, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "[hendes søn, tjenestekarl]",
+          "[hendes søn], Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Skræder, Huusfader",
+          "Huusfader, Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Huusf., Smed",
+          "Smed, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Tømrer og Huusfader",
+          "Huusfader og Tømrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer "
+      },
+      {
+        "from": [
+          "Bysmed, Huusfader",
+          "Huusfader, Bysmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Teglværksarbeider",
+          "[Teglværksarbeider]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Teglværksarbejder"
+      },
+      {
+        "from": [
+          "Bødker, Huusfader",
+          "Huusfader, Bødker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Arbeidskarl",
+          "[Arbeidskarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdskarl"
+      },
+      {
+        "from": [
+          "Mursvend",
+          "[Mursvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Huusfader, Skolel. Kirkesanger",
+          "Kirkesanger, Skolel., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Corporal",
+          "[Corporal]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Corporal"
+      },
+      {
+        "from": [
+          "Huusmd., Væver",
+          "Væver, Huusmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Trainkudsk",
+          "[Trainkudsk]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Trainkudsk"
+      },
+      {
+        "from": [
+          "Husfader, Tømrer",
+          "Tømrer, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Gaardmd., Huusf.",
+          "Huusf., Gaardmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Huusmand og Huusfader",
+          "Huusfader og Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "forsørges af Huusfaderen",
+          "Forsørges af Huusfaderen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "forsørges af Huusfaderen"
+      },
+      {
+        "from": [
+          "Sygevagt",
+          "[Sygevagt]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sygevagt"
+      },
+      {
+        "from": [
+          "[hans tjenestekarl]",
+          "hans Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Hmd., Huusf., Skrædder",
+          "Hmd., Skrædder, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Huusmand, Dagleier, Huusfader",
+          "Huusmand, Huusfader, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Jordbruger, Huusfader",
+          "Huusfader, Jordbruger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jordbruger"
+      },
+      {
+        "from": [
+          "Møllesvend",
+          "[Møllesvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Kiøbmand, Huusfader",
+          "Huusfader, Kiøbmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Huusmand, Høker, Huusfader",
+          "Huusmand, Huusfader, Høker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Gaardm., Huusfader",
+          "Huusfader, Gaardm."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Røgter, Huusfader",
+          "Huusfader, Røgter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Røgter"
+      },
+      {
+        "from": [
+          "forsørges af Fattigvæsenet",
+          "Forsørges af Fattigvæsenet"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "forsørges af Fattigvæsenet"
+      },
+      {
+        "from": [
+          "Konens Broder",
+          "[Konens Broder]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Konens Broder"
+      },
+      {
+        "from": [
+          "Dagleier, Huusfader",
+          "Huusfader, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusfader, Malermester",
+          "Malermester, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Maler"
+      },
+      {
+        "from": [
+          "Skovfoged, Huusfader",
+          "Huusfader, Skovfoged"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skovfoged"
+      },
+      {
+        "from": [
+          "Grd.eier, Huusfader",
+          "Huusfader, Grdeier."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdejer"
+      },
+      {
+        "from": [
+          "[deres søn], Træskomand",
+          "deres Søn, Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Bryggerkarl",
+          "[Bryggerkarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bryggerkarl"
+      },
+      {
+        "from": [
+          "Guldsmed, Huusfader",
+          "Huusfader, Guldsmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Huusfader, Inderste, Arbeidsmand",
+          "Inderste, Huusfader, Arbeidsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Matros i Coffardifart",
+          "[Matros i Coffardifart]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Matros"
+      },
+      {
+        "from": [
+          "Gmd., Huusf.",
+          "Huusf., Gmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Lærling i Bogtryk",
+          "[Lærling i Bogtryk]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bogtrykker"
+      },
+      {
+        "from": [
+          "Glarmester, Huusfader",
+          "Huusfader, Glarmester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Glarmester"
+      },
+      {
+        "from": [
+          "Slagterlærling",
+          "[Slagterlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "[hendes søn], Sømand",
+          "hendes Søn, Sømand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Hmd., Huusfader",
+          "Huusfader, Hmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Almisselem, Huusfader",
+          "Huusfader, Almisselem"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Almisselem"
+      },
+      {
+        "from": [
+          "Handelscommis",
+          "[Handelscommis]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelscommis"
+      },
+      {
+        "from": [
+          "Arbeidsmand, Huusmand",
+          "Huusmand, Arbeidsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Dagleier, Huuseier, Husfader",
+          "Huuseier, Dagleier, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer "
+      },
+      {
+        "from": [
+          "Soldat",
+          "[Soldat]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Snedker og Tømrer",
+          "Tømrer og Snedker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Huusmand, Jordbruger og Tømrer",
+          "Huusmand, Tømrer og Jordbruger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Bager og Huuseier, Huusfader",
+          "Huuseier, Bager og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager "
+      },
+      {
+        "from": [
+          "Inderste, Dagleier",
+          "Dagleier, Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Skrædder, hendes Søn",
+          "hendes Søn, Skrædder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Væversvend",
+          "[Væversvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huusf., Skolelærer",
+          "Skolelærer, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Landvæsenselev",
+          "[Landvæsenselev]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Landvæsenselev"
+      },
+      {
+        "from": [
+          "Huusfader, Aftægtsm.",
+          "Aftægtsm., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "Discipel",
+          "[Discipel]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Discipel"
+      },
+      {
+        "from": [
+          "Steenhugger, Huusfader",
+          "Huusfader, Steenhugger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stenhugger"
+      },
+      {
+        "from": [
+          "Almisselem",
+          "[Almisselem]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Almisselem"
+      },
+      {
+        "from": [
+          "Huuseier, Skomager, Huusfader",
+          "Skomager, Huuseier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Snedkerlærling",
+          "[Snedkerlærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Discipel i Aarhuus Cathedralskole",
+          "[Discipel i Aarhuus Cathedralskole]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Discipel "
+      },
+      {
+        "from": [
+          "Huusfaders Søn, Tjenestekarl",
+          "Tjenestekarl, Huusfaders Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Hans Søn, Tjenestekarl",
+          "hans Søn, Tjenestekarl"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Kjøbmand, Huusfader",
+          "Huusfader, Kjøbmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Huusfader, Værtshuusholder",
+          "Værtshuusholder, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Værtshusholder"
+      },
+      {
+        "from": [
+          "Ansat i 3die Dragonregiment",
+          "[Ansat i 3die Dragonregiment]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Indsidder, Træskomager, Huusfader",
+          "Indsidder, Huusfader, Træskomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "[Dragon ved 3. Reg.]",
+          "Dragon ved 3. Reg."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Huusfæster, lever af sin Jordlod, Huusfader",
+          "Huusfæster, lever af sin jordlod, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jordbruger"
+      },
+      {
+        "from": [
+          "[deres søn], Skræddersvend",
+          "deres Søn, Skræddersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Huusf., Kludesamler",
+          "Kludesamler, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kludesamler"
+      },
+      {
+        "from": [
+          "Huusmand og Høker og Huusfader",
+          "Huusmand, Høker og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Husfader, Væver",
+          "Væver, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Gaardmand, Sognefoged",
+          "Sognefoged, Gaardmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "Røgter",
+          "[Røgter]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Røgter"
+      },
+      {
+        "from": [
+          "Deres Pleiesøn",
+          "deres Pleiesøn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Deres Pleiesøn"
+      },
+      {
+        "from": [
+          "Inds., Dagl. Huusfader",
+          "Inds., Dagl., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusfader og Slagter",
+          "Slagter og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Husmand, Husfader",
+          "Husfader, Husmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Naalemagersvend",
+          "[Naalemagersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Nålemager"
+      },
+      {
+        "from": [
+          "deres Søn, Skomager",
+          "[deres søn], Skomager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Møllebygger",
+          "[Møllebygger]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møllebygger"
+      },
+      {
+        "from": [
+          "Fattiglem, forsørges af Fattigvæsenet",
+          "[Fattiglem, forsørges af Fattigvæsenet]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Fattiglem, forsørges af Fattigvæsenet"
+      },
+      {
+        "from": [
+          "Arbeidsmand",
+          "[Arbeidsmand]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdsmand"
+      },
+      {
+        "from": [
+          "Indsidder, Træskomand",
+          "Træskomand, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Husmand, Jordbruger, Husfader",
+          "Jordbruger, Husmand, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jordbruger"
+      },
+      {
+        "from": [
+          "Kjøbmand",
+          "[Kjøbmand]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Smed, Huusfader",
+          "Huusfader, Smed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Dreier og Huusmand",
+          "Huusmand og Dreier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Drejer "
+      },
+      {
+        "from": [
+          "[Dragon ved 3de Dragon Regiment]",
+          "Dragon ved 3de Dragon Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Huusmand, Steenhugger, Huusfader",
+          "Huusmand, Huusfader, Steenhugger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stenhugger"
+      },
+      {
+        "from": [
+          "[deres søn], Søemand",
+          "deres Søn, Søemand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "[Skrædersv.]",
+          "Skrædersv."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Dragon, Undercorporal",
+          "Dragon, [Undercorporal]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "Dagleier, Huusf.",
+          "Huusf., Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Particulier, Huusfader",
+          "Huusfader, Particulier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Particulier"
+      },
+      {
+        "from": [
+          "Hmd., Dagleier, Husfader",
+          "Dagleier, Husfader, Hmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "hendes Søn, Tømrer",
+          "Hendes Søn, Tømrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Huusmd., Huusfader, Dagleier",
+          "Huusmd., Dagleier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Møllebyggersvend",
+          "[Møllebyggersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møllebygger"
+      },
+      {
+        "from": [
+          "Handelslærling",
+          "[Handelslærling]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsmand"
+      },
+      {
+        "from": [
+          "Hmd., Arbeidsmand, Huusfader",
+          "Hmd., Huusfader, Arbeidsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Exam. juris",
+          "Exam. juris."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jurist"
+      },
+      {
+        "from": [
+          "Huusfader og Skomagermester",
+          "Skomagermester og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Væver, Huusfader",
+          "Huusfader, Væver"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "[deres søn], Snedkerlærling",
+          "Deres Søn, Snedkerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "[Korporal]",
+          "Korporal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Korporal"
+      },
+      {
+        "from": [
+          "Hmd., Huusfader, lever af sin Jordlod",
+          "Hmd., lever af sin Jordlod, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Arbeidsmand, Huusfader",
+          "Huusfader, Arbeidsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdsmand"
+      },
+      {
+        "from": [
+          "Lever af sin Jordlod",
+          "lever af sin Jordlod"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jordbruger"
+      },
+      {
+        "from": [
+          "Huusmand, Hjulmand, Huusfader",
+          "Huusmand, Huusfader, Hjulmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      },
+      {
+        "from": [
+          "[Stenhugger]",
+          "Stenhugger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stenhugger"
+      },
+      {
+        "from": [
+          "Aftægtsmand, Huusfaders Fader, der af ham forsørges",
+          "Aftægtsmand, Huusfaders [fader], der af ham forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtsmand"
+      },
+      {
+        "from": [
+          "[hendes søn], Bestyrer af Gaarden",
+          "hendes Søn, Bestyrer af Gaarden"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdbestyrer"
+      },
+      {
+        "from": [
+          "Bødkersvend",
+          "[Bødkersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Indsidder, Arbeidsmand",
+          "Arbeidsmand, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdsmand"
+      },
+      {
+        "from": [
+          "Tømrer, Huusf.",
+          "Huusf., Tømrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "deres Søn, Skrædder",
+          "[deres søn], Skrædder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Murer, Huusfader",
+          "Huusfader, Murer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Huusfaderens [søn]",
+          "Huusfaderens Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaderens [søn]"
+      },
+      {
+        "from": [
+          "[deres søn], i Væverlære",
+          "deres Søn, i Væverlære"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huusfaderens Svigerfader",
+          "Huusfaderens [svigerfader]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaderens Svigerfader"
+      },
+      {
+        "from": [
+          "Inderste, Huusfader og Dagleier",
+          "Inderste, Dagleier og Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Høker, Huusfader",
+          "Huusfader, Høker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Husmand, Dagleier, Husfader",
+          "Husmand, Husfader, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Skoemagersvend",
+          "[Skoemagersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Møllersvend",
+          "[møllersvend]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "[Soldat 3de Dragon Regiment]",
+          "Soldat 3de Dragon Regiment"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Soldat"
+      },
+      {
+        "from": [
+          "[Elev] paa Høiskolen",
+          "Elev paa Høiskolen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Højskolelev"
+      },
+      {
+        "from": [
+          "Huusmand, Huusfader, Slagter",
+          "Huusmand, Slagter, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Arbejdsmand",
+          "Arbejdsmand "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdsmand"
+      },
+      {
+        "from": [
+          "Bager",
+          "Bager "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      },
+      {
+        "from": [
+          "Husmand",
+          "husmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Daglejer",
+          "Daglejer "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Skolelærer",
+          "Skolelærer "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Arbejdskarl",
+          "[arbejdskarl]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Arbejdskarl"
+      },
+      {
+        "from": [
+          "Drejer",
+          "Drejer "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Drejer"
+      },
+      {
+        "from": [
+          "Tømrer",
+          "Tømrer "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Smed",
+          "Smed "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "[deres datter], tjener Forældrene",
+          "deres Datter, tjener Forældrene"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "[deres datter], tjener Forældrene"
+      },
+      {
+        "from": [
+          "Huusm., Hans Kone",
+          "Huusm., hans Kone"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusm., Hans Kone"
+      },
+      {
+        "from": [
+          "Hans Kone, Huusmd.",
+          "Huusmd., Hans Kone"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hans Kone, Huusmd."
+      },
+      {
+        "from": [
+          "[hendes søn], gaaer Moderen tilhaande",
+          "hendes Søn, gaaer Moderen tilhaande"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "[hendes søn], gaaer Moderen tilhaande"
+      },
+      {
+        "from": [
+          "Huusfaderens Fader, forsørges af ham",
+          "Huusfaderens [fader], forsørges af ham"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaderens Fader, forsørges af ham"
+      },
+      {
+        "from": [
+          "Huusfader, Marschandiser",
+          "Marschandiser, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Discipel",
+          "Discipel "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Discipel"
+      },
+      {
+        "from": [
+          "Huusf., Wæver",
+          "Wæver, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusf., Wæver"
+      },
+      {
+        "from": [
+          "Væver",
+          "Væver "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand, Huusfader",
+          "Huusmand, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Barbeer Lærling",
+          "Barbeerlærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Barber"
+      },
+      {
+        "from": [
+          "Conditorlærling",
+          "Conditor Lærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bager"
+      },
+      {
+        "from": [
+          "Hjulmd., Huusfader",
+          "Hjuulmd., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      },
+      {
+        "from": [
+          "Reebslagersvend",
+          "Reebslager Svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rebslager"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusfæster, Huusfader",
+          "Husfæster, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Slagtersvend",
+          "Slagter Svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Huusmand, Wæver, Husfader",
+          "Huusmand, Wæver, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Sadelmagerlærling",
+          "Sadelmager Lærling"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Gaardeier, Huusfad.",
+          "Gaaardeier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdejer"
+      },
+      {
+        "from": [
+          "Skomagermester",
+          "Skomager Mester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Huusfaders Fader, som af ham forsørges",
+          "Huusfa. [Fader], som af ham forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Huusfaders Fader, som af ham forsørges"
+      },
+      {
+        "from": [
+          "Huuseier, Wæver, lever af sit Haandværk, Husfader",
+          "Huuseier, Wæver, lever af sit Haandværk, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Smedsvend",
+          "Smed Svend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Muurer, Husfader",
+          "Muurer, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Indsidder, Saddelmager",
+          "Indsidder, Sadelmager"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Indsidder, Skrædder",
+          "Indsidder, Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Huuseier, Murer",
+          "Huuseier, Muurer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Skibscapitain",
+          "Skibscapitain, Huusfader",
+          "Skibscaptain",
+          "Skibscaptain, Husfader",
+          "Skibskaptain",
+          "Skibskaptain og Huusfader",
+          "Skibskaptain, Huusfader",
+          "Skibskaptain, hendes Søn",
+          "Skipscapitain"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skibskaptajn "
+      },
+      {
+        "from": [
+          "Indsidder, Tømrer",
+          "Indsidder, Tømrer, Huusfader",
+          "Indsidder, Tømmermand, Huusfader",
+          "Indsidder, Tømmrer og Snedker, Huusfader",
+          "Indsidder, Tømrer og Snedker",
+          "Indsidder, Tømrer, Hsfader.",
+          "Indsidder, Tømrer, Husfader",
+          "Indsidder, Tømrer, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Gaardmand, Husfader",
+          "Gaardmand, Huusfd.",
+          "Gaardmand, Huusfad.",
+          "Gaardmand, Huusfader og Brandfoged",
+          "Gaardmand, Huusfader, Sognefoged og Lægsmand",
+          "Gaardmand, Huusfader, Sogneforstander",
+          "Gardmand, Huusfader",
+          "Grd.mand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Hmd., lever af sin Jordlod, Huusf.",
+          "Hmd., lever af sin Jordlod, Hsf.",
+          "Hmd., lever af sin Jordlod, Huusfd.",
+          "Hmd., lever af sin Jord, Huusf.",
+          "Hmd., lever af sin Jord, Huusfader",
+          "Hmd., lever af sin Jordl.",
+          "Hmd., lever af sin Jordlod, Hsfader.",
+          "Hmd., lever af sin Jordlod, Huusfad."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Jordbruger"
+      },
+      {
+        "from": [
+          "Inderste, Dagleier, Husfader",
+          "Inderste, Dagl., Huusf.",
+          "Inderste, Dagl., Hsf.",
+          "Inderste, Dagleier, Huusf.",
+          "Inderste, Dagl., Hf.",
+          "Inderste, Dagleier, Husfader, faaer Hjælp af Fattigvæsenet",
+          "Inderste, Dagleier, Huusfader, Fattiglem",
+          "Inderste, Dagleier, deres Svigersøn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusmand, lever af sin Jordlod",
+          "Huusmand, lever af sin Jordlod, Hsfader.",
+          "Huusmand, lever af Lodden",
+          "Huusmand, lever af sin Jord, Huusfader",
+          "Husmand, Lever af sin Jordl.",
+          "Husmand, lever af sin Jordlod",
+          "Huusmand, lever af hans Jordlod",
+          "Huusmand, lever af sine Penge"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Huusmand, Dagleier, Husfader",
+          "Husmand, Dagleier",
+          "Huusmand, Dagleier eller Steenhugger, Huusfader",
+          "Huusmand, Dagleier og Husfader",
+          "Huusmand, Dagleier, Huusfad.",
+          "Huusmand, Dagleier, Huusfader, har en Jordlod",
+          "Huusmand, Teglbrænder, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "[deres søn], Sømand, Matros, fraværende, Koffardifart til England",
+          "[deres søn], Sømand frav. i Coffardifart med Caroline til England",
+          "[deres søn], Sømand, fraværende i Coffardifart til Belgien",
+          "[deres søn], Sømand, i Coffardifart med Horizont til Australien",
+          "[deres søn], Sømand, i England paa Coffardifart",
+          "deres Søn, Sømand, fraværende, Coffardifart til England"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Skomager Svend",
+          "Skoemager Svend",
+          "Skomagersvend, Huusfader",
+          "Skomagersvend, Logerende",
+          "Skoemagersvend, hans Søn",
+          "Skomagersvend, hendes Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Skrædermester",
+          "Skræddermester",
+          "Skrædermester, Hf.",
+          "Skrædermester, Eier 3 fag af Huset",
+          "Skrædermester, Husfader",
+          "Skrædermst."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Tobaksbinder",
+          "Tobaksbindersvend",
+          "Tobakspindermester",
+          "Tobakspindersvend",
+          "Tobaksspindermester",
+          "Tobaksspindersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tobaksbinder"
+      },
+      {
+        "from": [
+          "Sadelmagersvend",
+          "Saddelmager, Huusfader",
+          "Sadelmager, Huusfader",
+          "Stolemagersvend",
+          "Sadelmagersv.",
+          "Saddelmagersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sadelmager"
+      },
+      {
+        "from": [
+          "Stolemagermester",
+          "Saddelmagermester",
+          "Sadelmagermester",
+          "Sadelmagermester, Huusfader",
+          "Sadelmagermester, hendes Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stolemager"
+      },
+      {
+        "from": [
+          "Blikkenslager",
+          "Blikkenslagermester",
+          "Blikkenslager, Huusfader",
+          "Blikkenslagerlærling",
+          "Blikkenslagerm."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Blikkenslager"
+      },
+      {
+        "from": [
+          "[deres søn], Tømmerkarl",
+          "[deres søn], Tømmerlærling",
+          "[deres søn], Tømmersvend",
+          "deres Søn, Tømmermand",
+          "deres Søn, i Tømmerlære"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Aftægtmand",
+          "Aftægtmand, Husfader",
+          "Aftægtemand",
+          "Aftægtmand, Huusfader",
+          "Aftægtmand, forsørges af Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Aftægtmand"
+      },
+      {
+        "from": [
+          "Muurmester, Huusfader",
+          "Murmester, Husfader",
+          "Muurmester, Hsfader.",
+          "Muurmester, Huusf.",
+          "Muurmestersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Huusmd., lever af sin Jordlod",
+          "Huusmd., Lever af sin Jord",
+          "Huusmd., lever af Handelen, Huusfader",
+          "Huusmd., lever af Jordlodden",
+          "Huusmd., lever af sin Jordlod, Huusfd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Skrædersvend",
+          "Skrædersvend, Huusfdr.",
+          "Skræddersvend, Huusfader",
+          "Skrædersvend, Husfader",
+          "Skrædersvend, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Værtshusholder",
+          "Vertshuusholder",
+          "Værtshuusholder",
+          "Vertshusholder, Huusfader",
+          "Værtshuusholder, Huusfdr."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Værtshusholder"
+      },
+      {
+        "from": [
+          "Skoemager, Huusfader",
+          "Skomager, Hsfader.",
+          "Skomager, Husfader",
+          "Skomager, Huusfad.",
+          "Skomager, Huusfader, Inderste"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Snedker, Hsfader.",
+          "Snedker, Husfader",
+          "Snedker, Huusfader, Svigersøn",
+          "Snedker, Huusfaders Søn",
+          "Snedkersvd., Huusfdr."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Opsynsmand",
+          "Opsynsmand i Fattighuset",
+          "Opsynsmand, Huusfader",
+          "Weiopsynsmand og Jordbruger",
+          "Weiopsynsmand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Opsynsmand"
+      },
+      {
+        "from": [
+          "Gaardbestyrer",
+          "Gaardbestyrer, Hsfader.",
+          "Gaardbestyrer, Huusfader",
+          "Gårdbestyrer",
+          "Gaardbestyrer, Huusfaders Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdbestyrer"
+      },
+      {
+        "from": [
+          "Opholdsmand",
+          "Opholdsmand og Huusfader",
+          "Opholdsmand hos Sønnen",
+          "Opholdsmand paa Stedet og forsørges af dets Eier",
+          "Opholdsmand, Mandens Svigerfader, som af ham forsørges"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Opholdsmand"
+      },
+      {
+        "from": [
+          "Inderste, Træskokarl",
+          "Inderste, Træskomand, Huusfader",
+          "Inderste, Træskomd.",
+          "Inderste, Træskomd., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Huuseier, Snedker",
+          "Huseier, Snedker, Husfader",
+          "Huuseier, Snedker og Tømrer",
+          "Huuseier, Snedker og Tømrer, Huusfader",
+          "Huuseier, Snedker, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Snedkersvend, Huusfader",
+          "Snedkersvend, Husfader",
+          "Snedkersvend, Logerende",
+          "Snedker Svend",
+          "Snedkersvend og Huusfader",
+          "Snedkersvend, Fattiglem",
+          "Snedkersvend, Huusfaders [broder]",
+          "Snedkersvend, hendes Søn",
+          "Snedkersvend, tjener Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Indsidder, Smed",
+          "Indsidder, Smed og Huusfader",
+          "Indsidder, Smed, Husfader",
+          "Indsidder, Smedemester, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Huusmand, Væver",
+          "Huusmand, Væver og Huusfader",
+          "Husmand, Væver",
+          "Husmand, Væver, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Huuseier, Skrædder",
+          "Huuseier, Skrædder, Huusfader",
+          "Huuseier, Skrædder og Huusfader",
+          "Huuseier, Skræder, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Meieriforpagter",
+          "Meieriforpagter, Huusfader",
+          "Meierieforpagter",
+          "Meieriforpagter, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Mejeriforpagter"
+      },
+      {
+        "from": [
+          "Hjulmand, Huusfad.",
+          "Hjuelmand, Huusfader",
+          "Hjulmand, Huusfaders [broder]",
+          "Hjuulmand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmand"
+      },
+      {
+        "from": [
+          "Huusmand, Skræder",
+          "Huusmand, Skrædder og Huusfader",
+          "Huusmand, Skrædder, Huusfader",
+          "Huusmand, Skræder, Murer, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Slagtermester",
+          "Slagtermester, Husfader",
+          "Slagtermester, Huusf.",
+          "Slagtermst."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Mølleforpagter, Huusfader",
+          "Mølleforpagter",
+          "Mølleforpagter, Hf.",
+          "Mølleforpagter, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Skolelærer og K..?",
+          "Skolelærer og Kirkes.",
+          "Skolelærer og Kirkesanger, Husfader",
+          "Skolelærer og Ksgr."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer "
+      },
+      {
+        "from": [
+          "Skrædder, Huusfader",
+          "Skrædder, Hsfader.",
+          "Skræder, Husfader",
+          "Skræder, Huusfad."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "[tjenestekarl i gården nr. 43]",
+          "[tjenestekarl] hos Petersen i Labing",
+          "[tjenestekarl], Mølledreng",
+          "[tjenestekarl], hos Huusfader R. Jørgensen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Rebslagermester",
+          "Reebslagermester",
+          "Reebslagermester, Husfader",
+          "Reebslagermester, Huusfdr."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rebslager"
+      },
+      {
+        "from": [
+          "Træskoemand, Huusf.",
+          "Træskoemand, Huusfader",
+          "Træskomand, Huusfad.",
+          "Træskomand, Huusfaders Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "deres Søn, Smedelærling",
+          "deres Søn, Smedesvend",
+          "deres Søn, Smedsvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Tømrer, Huusfader",
+          "Tømrer, Hsfader.",
+          "Tømrer, Husfader (Hmd.)",
+          "Tømrer, Huusfaders Brod."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Huusmand, Træskomager, Huusfader",
+          "Huusmand, Træskomager",
+          "Huusmand, Træskomager, Hsfader.",
+          "Huusmand, Træskomand, Dagleier"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Inderste, Murer",
+          "Inderste, Murer, Husfader",
+          "Inderste, Murer, Huusf.",
+          "Inderste, Murer, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Gartner, Hsfad.",
+          "Gartner, Husfader",
+          "Gartner, Huusfdr."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gartner"
+      },
+      {
+        "from": [
+          "Cigarmagerlærling",
+          "Cigarmagerlære",
+          "Cigarmagerlærling, hendes Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Cigarmager"
+      },
+      {
+        "from": [
+          "Indsidder, Træskokarl",
+          "Indsidder, Træskomand, Huusfader",
+          "Indsidder, Træskomd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Gaardeier og Sognefoged",
+          "Gaardeier og Sognefoged, Familiefader",
+          "Gaardeier og Sogneforstander"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdejer"
+      },
+      {
+        "from": [
+          "Veimand, Husfader",
+          "Veimand, Husfader (Hmd.)",
+          "Veimand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Vejmand"
+      },
+      {
+        "from": [
+          "Tømmersvend, Huusfader",
+          "Tømmersvend, Husfader",
+          "Tømmersvend, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "deres Søn, Træskoarbeider",
+          "deres Søn, Træskoekarl",
+          "deres Søn, i Træskomagerlære"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Huusmand, Hjulmager, Huusfader",
+          "Huusmand, Hjulmager",
+          "Huusmand, Hjulmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Hjulmager"
+      },
+      {
+        "from": [
+          "Broelægger",
+          "Brolægger",
+          "Braalægger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Brolægger"
+      },
+      {
+        "from": [
+          "Huusmand og Familief.",
+          "Huusmand og Familiefader",
+          "Huusmand og Familiefader, Stenhugger"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Husmand, Steenhugger, Husfader",
+          "Huusmand, Steenhugger",
+          "Huusmand, Steenmurer, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stenhugger"
+      },
+      {
+        "from": [
+          "Huusmd., Dagleier",
+          "Husmd., Dagleier",
+          "Huusmd., Dagleier, Hs.fader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Gårdmand",
+          "Gaardmand",
+          "Grdmand."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Hsmd., Træskom.",
+          "Hsmd., Træskom., Huusf.",
+          "Hsmd., Træskom., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Handelslærling hos ovennævnte Ellermann",
+          "Handelslærling i Bruunsvig",
+          "Handelslærling, Enkemadam Rygaards Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Gaardmand, Skovfoged, Husfader",
+          "Gaardmand, Skovfoged, Huusfader",
+          "Gaardmand, Skræder, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Skolelærer, Hsfader.",
+          "Skolelærer, Husf.",
+          "Skolelærer, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Brænderibestyrer",
+          "Brænderibestyrer, Huusfdr.",
+          "Brænderie Bestyrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Brænderibestyrer"
+      },
+      {
+        "from": [
+          "Huusmand, Murer, Huusfader",
+          "Husmand, Murer",
+          "Huusmand, Murer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Inds., Dagleier",
+          "Inds., Dagleier, Huusfad.",
+          "Inds., Dagleier, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Gaardfæster, Huusfader",
+          "Gaardfæster, Hsfader.",
+          "Gaardfæster, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdfæster"
+      },
+      {
+        "from": [
+          "Forpagter af Møllen",
+          "Forpagter af Møllen og Huusfader",
+          "Forpagter af Møllen, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Møller"
+      },
+      {
+        "from": [
+          "Kobbersmedsvend",
+          "Kaabersmedsvend",
+          "Kobbersmed, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Deres Søn, Muurer",
+          "deres Søn, Murer, Steenhugger",
+          "deres Søn, Murersv."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Huusmand, ernærer sig af sin Jord",
+          "Huusmand, ernærer sig af sin Jordlod, Hfd.",
+          "Huusmand, ernærer sig med Handel med Kreature"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      },
+      {
+        "from": [
+          "Hmd., Træskomager, Husf.",
+          "Hmd., Træskomager, Husfader",
+          "Hmd., Træskomager, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Kroeforpagter",
+          "Kroeforpagter, Huusf.",
+          "Kroforpagter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kroforpagter"
+      },
+      {
+        "from": [
+          "Farversvend",
+          "Farversvend, Husfader",
+          "Farversvend, hendes Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Farver"
+      },
+      {
+        "from": [
+          "Contorist",
+          "Contoirist",
+          "Kontorist"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kontorist"
+      },
+      {
+        "from": [
+          "Brændevinsbrænder",
+          "Brændeviinsbrænder",
+          "Brændevinsbrænder, Proprietair"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Brændevinsbrænder"
+      },
+      {
+        "from": [
+          "Tobaksfabrikant, Huusfader",
+          "Tobaksfabrikbestyrer",
+          "Tobaksfabrikør, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tobaksfabrikant"
+      },
+      {
+        "from": [
+          "Skibstømrer",
+          "Skibstømrer, Husfader",
+          "Skibstømrermann"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skibstømrer"
+      },
+      {
+        "from": [
+          "Hsmd., Skrædder, Hs.fader",
+          "Hsmd., Skræder, Huusf.",
+          "Hsmd., Skræder, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Indsidd., Dagleier, Huusf.",
+          "Indsidd., Dagleier, Huusfader",
+          "Indst., Dagl., Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Rebslagersvend",
+          "Rebslager, Husfader",
+          "Reebslager, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Rebslager"
+      },
+      {
+        "from": [
+          "Træskomager, Huusfader",
+          "Træskomager, Huuseier",
+          "Træskomager, Hsfader."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      },
+      {
+        "from": [
+          "Gaardmand og Husfader",
+          "Gaardmand og Skovfoged",
+          "Gaardmand og Sognefoged, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand "
+      },
+      {
+        "from": [
+          "Gmd., Sognefoged",
+          "Gmd., Sognefoged, Huusf.",
+          "Gmd., Sognefoged, Huusfd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "Inderste, Smed",
+          "Inderste, Smed, Huusf.",
+          "Inderste, Sømand, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Inderste, Snedker",
+          "Inderste, Snedker, Hf.",
+          "Inderste, Snedkersv."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Inderste, Bødker",
+          "Inderste, Bødker, Huusfader",
+          "Inderste, Bødkermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      },
+      {
+        "from": [
+          "Kleinsmedemester",
+          "Kleinsmedemester, Huusfader",
+          "Kleinsmedmester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Hmd., Dagleier, Hsf.",
+          "Hmd., Dagleier, Huusfad.",
+          "Hmd., Dagleier, Huusfd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Husmand, Tjenestetyende",
+          "Husmand, Tjenestetyende, Husfader",
+          "Huusmand, tjener"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tjenestekarl"
+      },
+      {
+        "from": [
+          "Gaardeier, Sognefoged",
+          "Gaardeier, Sognefoged og Huusfader",
+          "Gaardeier, Sognefoged, Familiefader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sognefoged"
+      },
+      {
+        "from": [
+          "Adjunct ved Kathedralskolen",
+          "Adjunct ved Cathedralskolen i Aarhuus",
+          "Adjunkt ved Cathedralskolen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Adjunct ved Kathedralskolen"
+      },
+      {
+        "from": [
+          "Snedkermester",
+          "Snedkermester, Husfader",
+          "Snedkermst."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Huusmand, Gartner",
+          "Huusmand, Gartner, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gartner"
+      },
+      {
+        "from": [
+          "Marquer",
+          "Marqueur",
+          "Marquør"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Marquer"
+      },
+      {
+        "from": [
+          "Hmd., Dagl., Hsfad.",
+          "Hmd., Dagl., Huusfad.",
+          "Hmd., Dagl., Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Huusmand, Post, Huusfader",
+          "Huusmand, Postbud",
+          "Huusmand, Postbud, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Postbud"
+      },
+      {
+        "from": [
+          "Bomuldsvæver",
+          "Bomuldsvæver og Huusfader",
+          "Bomuldsvæver, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "Inderste, Fisker, Hf.",
+          "Inderste, Fisker, Hsf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Fisker"
+      },
+      {
+        "from": [
+          "Mursvend, Huusfader",
+          "Mursvend, Husfader",
+          "Muursvend, Huusfdr."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Hmd., Slagter, Hsf.",
+          "Hmd., Slagter, Huusf.",
+          "Hmd., Slagter, Huusfad."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Husmand, Tømrer, Husfader",
+          "Huusmand, Tømmerer, Huusfader",
+          "Huusmand, Tømrer"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      },
+      {
+        "from": [
+          "Smedemester, Huusfdr.",
+          "Smedemester, Husfader",
+          "Smedemester, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Overlærer ved 2den Borger Drengeskole",
+          "Overlærer ved Borgerskolen",
+          "Overlærer ved Forskolen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Ingenieur",
+          "Ingeneur",
+          "Ingeniur"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ingeniør"
+      },
+      {
+        "from": [
+          "hendes Søn, Dagl.",
+          "hendes Søn, Dagleier, Indsidder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Skrædder",
+          "Skræder"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skrædder"
+      },
+      {
+        "from": [
+          "Slagter, Huusfad.",
+          "Slagter, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Huusf., Byesmed",
+          "Huusf., Bysmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      },
+      {
+        "from": [
+          "Indsidder, Murer og Huusfader",
+          "Indsidder, Murer, Huusf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      },
+      {
+        "from": [
+          "Fæstehusmd., Husfader",
+          "Fæstehuusmd., Hs.fader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husfader"
+      },
+      {
+        "from": [
+          "Søemand, Husfader",
+          "Sømand, Husfaderens Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sømand"
+      },
+      {
+        "from": [
+          "Discipel",
+          "Dicipel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Discipel"
+      },
+      {
+        "from": [
+          "Indsidder, Slagter",
+          "Indsidder, Slagter, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Slagter"
+      },
+      {
+        "from": [
+          "Indsidder, Snedker",
+          "Indsidder, Snedker, Huusfd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Snedker"
+      },
+      {
+        "from": [
+          "Handelsgartner",
+          "Handelsgartner, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Handelsgartner"
+      },
+      {
+        "from": [
+          "Bøssemagersvend",
+          "Bøssemager Svend, hans Søn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bøssemager"
+      },
+      {
+        "from": [
+          "Træskomd., Huusfader",
+          "Træskomd., Huusfad."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomand"
+      },
+      {
+        "from": [
+          "Capitalist",
+          "Kapitalist"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kapitalist"
+      },
+      {
+        "from": [
+          "Gartner ved Hovedgaarden",
+          "Gartner ved Hovedgaarden, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gartner"
+      },
+      {
+        "from": [
+          "Hsmd., Væver, Huusf.",
+          "Hsmd., Væver, Huusfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Væver"
+      },
+      {
+        "from": [
+          "forhenværende Kjøbmand",
+          "forhenværende Gmd., nu Aftægtsmd."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      },
+      {
+        "from": [
+          "Entlediget Skolelærer",
+          "entlediget Skolelærer og Pensionist"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skolelærer"
+      },
+      {
+        "from": [
+          "Hmd., Dagl., Huusf.",
+          "Hmd., Dagl., Hsf."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      },
+      {
+        "from": [
+          "Gaardmd., Huusfad.",
+          "Gaardmd., Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdmand"
+      },
+      {
+        "from": [
+          "Skomaggermester",
+          "Skomakermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Skomager"
+      },
+      {
+        "from": [
+          "Bankassistent, Cand. jur.",
+          "Bankassistent, Husfader"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bankassistent"
+      },
+      {
+        "from": [
+          "Kobbersmed",
+          "Kaabersmed"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Handelsmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Huusmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husmand"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Træskomand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Træskomager"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Dagleier, Hsfader."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Daglejer"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Muursvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Murer"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gaardeier, Hsfader."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gårdejer"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Høker"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Malersvend"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Maler"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Bødkermester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Bødker"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Smedemester"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Smed"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Tømmermand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Tømrer"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Kiøbmand"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "koen",
+          "expression": "value",
+          "columnName": "koen",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "mand",
+                "l": "mand"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "amt",
+          "expression": "value",
+          "columnName": "amt",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Århus",
+                "l": "Århus"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "range",
+          "name": "alder",
+          "expression": "value",
+          "columnName": "alder",
+          "from": 15,
+          "to": 99,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "stilling",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Handelscommis"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Købmand"
+      }
+    ],
+    "description": "Mass edit cells in column stilling"
+  }
+]
